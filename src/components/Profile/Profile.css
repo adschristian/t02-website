@@ -1,0 +1,33 @@
+#profile-photo {
+    text-align: center;
+}
+
+#profile-photo img {
+    width: 25em;
+    border-radius: 100%;
+    margin: 20px 0;
+}
+
+#profile-photo figcaption {
+    text-align: justify;
+}
+
+#curriculum-button {
+    padding: 10px 30px;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+#curriculum-button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    #profile-photo img {
+        width: 15em;
+    }
+}

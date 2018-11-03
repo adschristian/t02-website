@@ -1,0 +1,24 @@
+#skills {
+    text-align: center;
+}
+
+#list-skills {
+    padding: 20px 0;
+}
+
+#list-skills {
+    list-style: none;
+}
+
+#list-skills li {
+    padding: 10px 5px;
+    margin: 3px;
+    background-color: darkgrey;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#list-skills li:hover {
+    background-color: black;
+    color: white;
+}

@@ -1,0 +1,16 @@
+#contact {
+    text-align: center;
+}
+
+.tiny-icon {
+    width: 2em;
+}
+
+#contact-social a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+#contact-social h4 {
+    margin: 40px 0 0;
+}

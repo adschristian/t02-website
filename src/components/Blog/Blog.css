@@ -1,0 +1,38 @@
+img {
+    width: 250px;
+}
+
+#blog {
+    text-align: center;
+}
+
+#blog a {
+    text-decoration: none;
+}
+
+#blog figcaption {
+    padding: 20px 0 10px;
+    text-align: justify;
+    color: black;
+}
+
+#blog article {
+    color: black;
+    /*border-radius: 10px;*/
+}
+
+@keyframes expand{
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.05);
+	}
+}
+
+#blog article:hover{
+    color: white;
+    animation-name: expand;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
