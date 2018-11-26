@@ -1,8 +1,39 @@
-import React, { Fragment } from 'react'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import Button from '../Button'
+import fire from '../../config/Fire'
 
-const Header = () => {
-    return (
-        <Fragment>
+class Header extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            user: {}
+        }
+        this.authListener = this.authListener.bind(this)
+        this.isAuthenticaded = this.isAuthenticaded.bind(this)
+    }
+    
+    componentDidMount() {
+        this.authListener()
+    }
+
+    authListener() {
+        fire.auth().onAuthStateChanged((user) => {
+            if (user) {
+                this.setState({ user })
+            } else {
+                this.setState({ user: null })
+            }
+        })
+    }
+    
+    isAuthenticaded() {
+        let location = window.location
+        if (this.state.user) location.href = '/admin'
+    }
+
+    render() {
+        return (
             <nav className="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
 
                 <div className="container">
@@ -33,10 +64,14 @@ const Header = () => {
                             </li>
                         </ul>
                     </div>
+
+                    <Link to="/login">
+                        <Button className="btn btn-light" onClick={this.isAuthenticaded} >Entrar</Button>
+                    </Link>
                 </div>
             </nav>
-        </Fragment>
-    )
+        )
+    }
 }
 
 export default Header

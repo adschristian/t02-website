@@ -1,28 +1,27 @@
-import React, { Fragment, Component } from 'react';
-import Header from './components/Header'
-import Profile from './components/Profile'
-import Skills from './components/Skills'
-import Blog from './components/Blog'
-import Portfolio from './components/Portfolio'
-import Info from './components/Info'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import React, { Component } from 'react'
+
+// Páginas
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Admin from './pages/Admin'
+import ErrorPage from './pages/ErrorPage'
+
+// Roteamento
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 class App extends Component {
-  render() {
-    return (
-      <Fragment>
-        <Header/>
-        <Profile/>
-        <Skills/>
-        <Blog/>
-        <Portfolio/>
-        <Info/>
-        <Contact/>
-        <Footer/>
-      </Fragment>
-    );
-  }
+    render() {
+        return (
+            <Router>
+                <Switch>
+                    <Route exact path='/' component={Home} />
+                    <Route path='/login' component={Login} />
+                    <Route path='/admin' component={Admin} />
+                    <Route path='*' component={ErrorPage} />
+                </Switch>
+            </Router>
+        )
+    }
 }
 
-export default App;
+export default App
